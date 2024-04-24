@@ -10,3 +10,6 @@ def article(request):
 
 def author(request):
     return render(request, 'author.html')
+
+def index_(request):
+    return render(request, 'index.html')
