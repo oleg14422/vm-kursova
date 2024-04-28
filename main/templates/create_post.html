@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новий пост</title>
+</head>
+<body>
+    <h1>Створити статтю</h1>
+    <form class='form' method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Створити</button></form>
+</body>
+</html>

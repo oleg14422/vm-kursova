@@ -5,8 +5,76 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a61874c7-8cd1-4943-a3c6-2c8820e06240" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/main/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/templates/article_.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/css/style.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/files/lightgallery/css/lightgallery.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/files/lightgallery/fonts/lg.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/files/lightgallery/fonts/lg.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/files/lightgallery/js/lightgallery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/fonts/icons.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/fonts/icons.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/bg-image.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/bg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/image.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/services-about/dog-house.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/services-about/medal.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/services-about/syringe.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/block-header/bg-button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/block-header/bg-button.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/footer/bg-decor.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/footer/bg-decor.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/footer/bg-decor.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/01.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/02.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/03.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/03.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/04.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/hero/01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/hero/01.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/hero/bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/hero/bg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/bed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/bed.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/bg.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/bg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/bowls.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/bowls.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/cat-food.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/cat-food.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/dog-food.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/dog-food.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/scratching.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/scratching.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/star-fill.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/star.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/teddy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/teddy.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/treat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/treat.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/treats-knot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/treats-knot.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/services/decor.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/services/image.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/img/services/image.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/js/app.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/js/app.min.js.LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/author.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/author.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,29 +126,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Django Server.VM.executor": "Run",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
-    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
-    "WebServerToolWindowPanel.toolwindow.show.date": "false",
-    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
-    "WebServerToolWindowPanel.toolwindow.show.size": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/git/VM/main/templates",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Django Server.VM.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
+    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/git/VM/main/templates&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\git\VM\main\templates" />
@@ -143,7 +211,13 @@
       <workItem from="1713708129826" duration="1781000" />
       <workItem from="1713851055806" duration="896000" />
       <workItem from="1713852185181" duration="549000" />
-      <workItem from="1713943119865" duration="2388000" />
+      <workItem from="1713943119865" duration="3492000" />
+      <workItem from="1714047971749" duration="7468000" />
+      <workItem from="1714148224525" duration="7402000" />
+      <workItem from="1714204808410" duration="3089000" />
+      <workItem from="1714218628938" duration="3726000" />
+      <workItem from="1714235638209" duration="3332000" />
+      <workItem from="1714309188615" duration="3718000" />
     </task>
     <servers />
   </component>

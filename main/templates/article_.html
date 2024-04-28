@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/article_style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="head">
+            <div class="header__container">
+                тут будуть посилання на інші сторінки сайту
+            </div>
+        </div>
+
+    <div class="body">
+        <div class="body__container">
+            <div class="content">
+                <div class="title">
+                    <p class="post-info"><span>{{ post.created }}</span> {{ post.views }} <a href="{% url 'author' %}?author={{ post.author.id }}">{{ post.author }}</a></p>
+                    <h1>{{ post.title }}</h1>
+                </div>
+                <p>{{ post.content }}</p>
+                <div class="asnwers">
+                    <h2>Коментарі</h2>
+
+                    {% if CommentForm %}
+                        <h3>Додати коментар</h3>
+                        <form class='form' method="post">
+                        {% csrf_token %}
+                        {{ CommentForm.as_p }}
+                        <button type="submit">Додати коментар</button></form>
+                    {% else %}
+                        <p><a href="{% url 'login' %}">Увійдіть</a> Щоб додати коментар</p>
+                    {% endif %}
+                    <ul>
+                        {% for comment in comments %}
+                            <li>{{ comment.created }} <a href="{%  url 'author' %}?author={{ comment.author.id }}">{{ comment.author }}</a><p>{{ comment.content }}</p></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="sidebar">
+                <h2>інші статті</h2>
+                <p>тут будуть інші статті</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

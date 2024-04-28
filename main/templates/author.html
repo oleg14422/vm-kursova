@@ -10,7 +10,7 @@
     <div class="wrapper">
         <header>
             <div class="header__container">
-                <a href="">Посилання 1</a>
+                <a href="{% url 'home' %}">Головна</a>
                 <a href="">Посилання 2</a>
                 <a href="">Посилання 3</a>
                 <a href="">Посилання 4</a>
@@ -20,6 +20,17 @@
             <div class="main__container">
                 <div class="author__info">
                     <p>Інформація про автора</p>
+                    <p>username: {{user.username}}</p>
+                    <p>first name: {{ author.first_name }}</p>
+                    <p>last name: {{ author.last_name }}</p>
+                </div>
+                <div class="post-list">
+                    <h3>Статті автора</h3>
+                    <ul>
+                        {% for post in posts %}
+                        <li><a href="{% url 'post_view' %}?post={{ post.id }}">{{ post.title }}</a></li>
+                        {% endfor %}
+                    </ul>
                 </div>
             </div>
         </main>

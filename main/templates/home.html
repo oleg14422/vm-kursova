@@ -12,8 +12,8 @@
         <header class="header">
             <div class="header__container">
                 <div class='nav'>
-                    <a href="#">Посилання 1 на інші сторінки сайту</a>
-                    <a href="#">Посилання  24на інші сторінки сайту</a>
+                    <a href="{% url 'login' %}">Вхід</a>
+                    <a href="{% url 'new' %}">Реєстрація</a>
                     <a href="#">Посилання  3на інші сторінки сайту</a>
                     <a href="#">Посилання3 на інші сторінки сайту</a>
                 </div>
@@ -27,7 +27,13 @@
                 <div class="last-posts">
                     <h2>Останні статті</h2>
                     <div class="posts-content">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi eos saepe sed quibusdam, a aliquam doloribus magni officia quas perspiciatis. Blanditiis, quis? Minus fugit temporibus harum cupiditate qui dolorum explicabo!
+                        <ul>
+                            {% for post in posts %}
+                                <li><a href="{% url 'post_view' %}?post={{ post.id }}">{{ post.title }}</a>
+                                    <p>{% if post.short_description %}{{ post.short_description }}{% endif %}</p>
+                                </li>
+                            {% endfor %}
+                        </ul>
                     </div>
                 </div>
             </div>
