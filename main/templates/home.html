@@ -14,8 +14,7 @@
                 <div class='nav'>
                     <a href="{% url 'login' %}">Вхід</a>
                     <a href="{% url 'new' %}">Реєстрація</a>
-                    <a href="#">Посилання  3на інші сторінки сайту</a>
-                    <a href="#">Посилання3 на інші сторінки сайту</a>
+                    <a href="{% url 'create_post' %}">Створити статтю</a>
                 </div>
             </div>
         </header>
@@ -26,14 +25,16 @@
                 </div>
                 <div class="last-posts">
                     <h2>Останні статті</h2>
-                    <div class="posts-content">
-                        <ul>
+                    <div class="posts-list">
                             {% for post in posts %}
-                                <li><a href="{% url 'post_view' %}?post={{ post.id }}">{{ post.title }}</a>
-                                    <p>{% if post.short_description %}{{ post.short_description }}{% endif %}</p>
-                                </li>
+                                <div class="post-preview">
+                                    <a class='author-link' href="{% url 'author' %}?author={{ post.author.id }}">{{ post.author }}</a>
+                                    <br>
+                                    <br>
+                                    <a href="{% url 'post_view' %}?post={{ post.id }}">{{ post.title }}</a>
+                                </div>
                             {% endfor %}
-                        </ul>
+
                     </div>
                 </div>
             </div>

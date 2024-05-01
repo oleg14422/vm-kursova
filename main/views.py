@@ -1,12 +1,50 @@
 from django.shortcuts import render, redirect
+from rest_framework import status
+import hashlib
+import time
+from django.views.decorators.csrf import csrf_exempt
 from .forms import RegistrationForm, LoginForm, CreatePostForm, CreateCommentForm
-from django.http import HttpResponseBadRequest
+from django.http import HttpResponseBadRequest, HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
-
 from .models import Authors, Posts, Comments
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializers import AuthorSerializer, UserSerializer, CommentSerializer
+
+
 # Create your views here.
+
+
+class AuthorsView(APIView):
+    def get(self, request):
+        queryset = Authors.objects.all()
+        id_ = request.query_params.get('id', None)
+        first_name = request.query_params.get('first_name', None)
+        last_name = request.query_params.get('last_name', None)
+        tg_id = request.query_params.get('tg_id', None)
+
+        if id_:
+            queryset = queryset.filter(id=id_)
+        if first_name:
+            queryset = queryset.filter(first_name=first_name)
+        if last_name:
+            queryset = queryset.filter(last_name=last_name)
+        if tg_id:
+            queryset = queryset.filter(tg_id=tg_id)
+
+        serializer = AuthorSerializer(
+            instance=queryset, many=True
+        )
+        return Response(serializer.data)
+
+
+class CommentView(APIView):
+    def get(self, request):
+        queryset = Comments.objects.all()
+        serializer = CommentSerializer(queryset, many=True)
+        return Response(serializer.data)
 
 
 def home(request):
@@ -89,7 +127,7 @@ def myaccount(request):
     return render(request, 'myaccount.html', context={'user': request.user, 'author': Authors.objects.get(auth=request.user)})
 
 
-@login_required()
+
 def create_post(request):
     '''
     Сторінка на якій користувачі можуть створювати нові статті
@@ -98,6 +136,9 @@ def create_post(request):
     Стаття зберігається в моделі Posts і зв'язана через ForeignKey
     з автором який її створив
     '''
+    if not request.user.is_authenticated:
+        return redirect('login')
+
     if request.method == 'POST':
         form = CreatePostForm(request.POST)
         if form.is_valid():
@@ -144,4 +185,47 @@ def post_view(request):
     else:
         return render(request, 'article_.html', context={'post': post,'comments': comments})
 
+@csrf_exempt
+def tg_new(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        password = request.POST.get('password')
+        id_ = request.POST.get('id')
+        user_ = User.objects.filter(username=username)
+        if user_.exists():
+            return HttpResponseBadRequest('username already exist')
+        user_ = Authors.objects.filter(tg_id=id)
+        if user_.exists():
+            return HttpResponseBadRequest('You are already registered')
+        try:
+            user = User.objects.create_user(username=username, password=password)
+            author = Authors(auth=user, first_name=first_name, last_name=last_name, tg_id = id_)
+            author.save()
+        except Exception as e:
+            print(f'tg_new: error: {e}')
+        return HttpResponse('created')
+    else:
+        return HttpResponseBadRequest('post only')
+
+
+@csrf_exempt
+def tg_login(request):
+    SECRET_KEY = 'adsriugperjhbkjvlgnrsh JSKLGHJSV Lvh LSEJH Vslkhjasdhflknavsl12417 69oiyavnhvn9uioqrh '
+    id_ = request.GET.get('id')
+    time_ = request.GET.get('time')
+    token = request.GET.get('token')
+    if not id_ or not time_ or not token:
+        print(id_, time_, token)
+        return HttpResponseBadRequest('invalid login')
+    check_token = hashlib.sha256(str(SECRET_KEY+str(id_)+str(time_)).encode()).hexdigest()
+    if not Authors.objects.filter(tg_id=id_).exists():
+        return HttpResponseBadRequest('User does not exist')
+    if check_token != token:
+        print('invalid token')
+        return HttpResponseBadRequest('invalid login')
+    user = Authors.objects.get(tg_id=id_).auth
+    login(request, user)
+    return redirect('myaccount')
 

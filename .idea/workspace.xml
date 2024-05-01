@@ -5,74 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a61874c7-8cd1-4943-a3c6-2c8820e06240" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main/templates/article_.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2024_8_58_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2024_8_58__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/VM/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/VM/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/css/style.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/files/lightgallery/css/lightgallery.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/files/lightgallery/fonts/lg.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/files/lightgallery/fonts/lg.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/files/lightgallery/js/lightgallery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/fonts/icons.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/fonts/icons.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/bg-image.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/bg.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/image.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/services-about/dog-house.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/services-about/medal.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/about-us/services-about/syringe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/block-header/bg-button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/block-header/bg-button.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/footer/bg-decor.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/footer/bg-decor.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/footer/bg-decor.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/01.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/02.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/02.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/03.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/03.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/04.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/gallery/04.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/hero/01.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/hero/01.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/hero/bg.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/hero/bg.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/bed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/bed.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/bg.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/bg.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/bowls.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/bowls.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/cat-food.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/cat-food.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/dog-food.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/dog-food.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/scratching.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/scratching.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/star-fill.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/star.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/teddy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/teddy.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/treat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/treat.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/treats-knot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/products/items/treats-knot.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/services/decor.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/services/image.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/img/services/image.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/js/app.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/js/app.min.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/author.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/author.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/css/article_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/css/article_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/article_.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/article_.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
     </list>
@@ -87,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -218,6 +162,16 @@
       <workItem from="1714218628938" duration="3726000" />
       <workItem from="1714235638209" duration="3332000" />
       <workItem from="1714309188615" duration="3718000" />
+      <workItem from="1714329846190" duration="4691000" />
+      <workItem from="1714397960364" duration="6971000" />
+      <workItem from="1714461118872" duration="316000" />
+      <workItem from="1714462983186" duration="866000" />
+      <workItem from="1714464026630" duration="964000" />
+      <workItem from="1714488090241" duration="1394000" />
+      <workItem from="1714492409092" duration="3627000" />
+      <workItem from="1714496867400" duration="489000" />
+      <workItem from="1714508426726" duration="2414000" />
+      <workItem from="1714547329544" duration="1281000" />
     </task>
     <servers />
   </component>

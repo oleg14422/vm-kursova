@@ -10,10 +10,14 @@
     <div class="wrapper">
         <div class="head">
             <div class="header__container">
-                тут будуть посилання на інші сторінки сайту
+                <div class='nav'>
+                    <a href="{% url 'login' %}">Вхід</a>
+                    <a href="{% url 'new' %}">Реєстрація</a>
+                    <a href="{% url 'create_post' %}">Створити статтю</a>
+                    <a href="{% url 'home' %}">Головна</a>
+                </div>
             </div>
         </div>
-
     <div class="body">
         <div class="body__container">
             <div class="content">
@@ -21,7 +25,7 @@
                     <p class="post-info"><span>{{ post.created }}</span> {{ post.views }} <a href="{% url 'author' %}?author={{ post.author.id }}">{{ post.author }}</a></p>
                     <h1>{{ post.title }}</h1>
                 </div>
-                <p>{{ post.content }}</p>
+                <p class="post-content">{{ post.content }}</p>
                 <div class="asnwers">
                     <h2>Коментарі</h2>
 

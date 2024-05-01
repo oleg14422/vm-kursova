@@ -13,7 +13,6 @@ a:hover{text-decoration:none;}
 ul li{list-style:none;}
 img{vertical-align:top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
-
 [class*="__container"] {
     max-width: 1200px;
     margin: 0 auto;
@@ -24,12 +23,8 @@ body {
     background-color: #AAA;
 }
 .body {
-    display: flex;
-    align-items: center;
 }
 .sidebar{
-    width: 25%;
-    height: 100%;
     font-size: 15px;
 }
 .head {
@@ -99,4 +94,45 @@ ul{
 
 h1{
     font-size:32px;
+}
+.post-content {
+    max-width: 900px; /* Максимальна ширина блоку */
+    word-wrap: break-word; /* Розрив дуже довгих слів */
+}
+
+.posts-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.post-preview {
+    border: 1px solid black;
+    width: 200px;
+    min-height: 50px;
+    flex: 0 1 10px;
+
+}
+
+.post-preview a {
+    color: Black;
+}
+
+.post-preview a:hover {
+    color: red;
+}
+
+.author-link{
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nav:hover{
+    color:red;
+}
+
+.nav:visited {
+    color: #dddddd;
 }
