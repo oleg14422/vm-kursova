@@ -5,20 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a61874c7-8cd1-4943-a3c6-2c8820e06240" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main/serializers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2024_8_58_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_04_2024_8_58__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/VM/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/VM/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/css/article_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/css/article_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/article_.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/article_.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main/templates/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/new.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +160,7 @@
       <workItem from="1714492409092" duration="3627000" />
       <workItem from="1714496867400" duration="489000" />
       <workItem from="1714508426726" duration="2414000" />
-      <workItem from="1714547329544" duration="1281000" />
+      <workItem from="1714547329544" duration="1550000" />
     </task>
     <servers />
   </component>

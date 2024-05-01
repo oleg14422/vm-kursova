@@ -16,6 +16,7 @@
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Увійти</button></form>
+    <a href="https://t.me/blog_register_helper_bot">Вхід за допомогою телеграм бота</a>
     <div class='nav'>
         <a href="{% url 'home' %}">Головна</a>
         <a href="{% url 'new' %}">Реєстрація</a>
