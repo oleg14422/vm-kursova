@@ -6,8 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a61874c7-8cd1-4943-a3c6-2c8820e06240" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/templates/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/new.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/article.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/article.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/author.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/author.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/create_post.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/create_post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/templates/myaccount.html" beforeDir="false" afterPath="$PROJECT_DIR$/main/templates/myaccount.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,7 +163,7 @@
       <workItem from="1714492409092" duration="3627000" />
       <workItem from="1714496867400" duration="489000" />
       <workItem from="1714508426726" duration="2414000" />
-      <workItem from="1714547329544" duration="1550000" />
+      <workItem from="1714547329544" duration="2856000" />
     </task>
     <servers />
   </component>

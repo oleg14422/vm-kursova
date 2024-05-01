@@ -5,6 +5,10 @@
     <title>Новий пост</title>
 </head>
 <body>
+    <div class='nav'>
+        <a href="{% url 'home' %}">Головна</a>
+        <a href="{% url 'new' %}">Реєстрація</a>
+    </div>
     <h1>Створити статтю</h1>
     <form class='form' method="post">
     {% csrf_token %}

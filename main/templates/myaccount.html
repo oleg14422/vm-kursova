@@ -5,6 +5,10 @@
     <title>account</title>
 </head>
 <body>
+    <div class='nav'>
+        <a href="{% url 'home' %}">Головна</a>
+        <a href="{% url 'new' %}">Реєстрація</a>
+    </div>
     <h1>Мій акаунт</h1>
     <p>username: {{user.username}}</p>
     <p>first name: {{ author.first_name }}</p>
