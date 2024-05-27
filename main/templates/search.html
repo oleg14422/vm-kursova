@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="static/css/article_style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Пошук</title>
 </head>
 <body>
     <div class="wrapper">
@@ -18,24 +18,7 @@
                             </div>
                         </a>
                     </div>
-                    <a href="{% url 'new' %}">Реєстрація</a>
                 </div>
-                <form class="search-form" id='search-form' action='/search' method="get">
-                    {% csrf_token %}
-                    <input type="text" id="search-input" placeholder="Введіть ваш пошуковий запит">
-                    <button type="submit">Пошук</button>
-                </form>
-
-                <script>
-                document.getElementById("search-form").addEventListener("submit", function(event) {
-                    event.preventDefault();  // Зупинити відправлення форми
-
-                    var searchInput = document.getElementById("search-input").value;  // Отримати значення поля введення
-
-                    // Перенаправити на URL з введеним текстом як параметр запиту
-                    window.location.href = "/search?q=" + encodeURIComponent(searchInput);
-                });
-                </script>
                 <div class="account">
                     <a href="{% url 'myaccount' %}">
                         <div class="logo-img-container">
@@ -48,27 +31,45 @@
         <main>
             <div class="main__container">
                 <div class="content">
-                    <div class="title">Вхід</div>
-                    <form class='form' method="post">
+                    <div class="title">
+                        Пошук
+                    </div>
+                    <form class="search-form" id='search-form' action='/search' method="get">
                         {% csrf_token %}
-                        <div class="form-input">
-                            <label for="">{{ form.username.label }}</label>
-                            {{ form.username }}
-                        </div>
-
-                        <div class="form-input">
-                            <label for="">{{ form.password.label }}</label>
-                            {{ form.password }}
-                        </div>
-                        <div class="reg-button">
-                            <button type="submit">Увійти</button>
-                        </div>
+                        <input type="text" id="search-input" placeholder="Введіть ваш пошуковий запит">
+                        <button type="submit">Пошук</button>
                     </form>
-                    <a href="https://t.me/blog_register_helper_bot">Реєстрація за допомогою телеграм бота</a>
+
+                    <script>
+                    document.getElementById("search-form").addEventListener("submit", function(event) {
+                        event.preventDefault();  // Зупинити відправлення форми
+
+                        var searchInput = document.getElementById("search-input").value;  // Отримати значення поля введення
+
+                        // Перенаправити на URL з введеним текстом як параметр запиту
+                        window.location.href = "/search?q=" + encodeURIComponent(searchInput);
+                    });
+                    </script>
+                    <div class="sub-title">
+                        Результати
+                    </div>
+                    {% if results %}
+                        {% for result in results %}
+                            <div class="result-item">
+                                <div class="logo-img-container">
+                                    <img src="{{ logo_link }}" alt="author_logo">
+                                </div>
+                                <div class="info">
+                                    <div class="author-link"><a href="{% url 'author' %}?author={{ result.author.id }}">{{ result.author }}</a></div>
+                                    <div class="title-link"><a href="{% url 'post_view' %}?post={{ result.id }}">{{ result.title }}</a></div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <h3>Нічого не знайдено ;/</h3>
+                    {% endif %}
                 </div>
-
             </div>
-
         </main>
         <footer>
             <div class="footer__container">

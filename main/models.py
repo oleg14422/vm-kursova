@@ -8,6 +8,8 @@ class Authors(models.Model):
     first_name = models.CharField(max_length=16)
     last_name = models.CharField(max_length=16, default=None, null=True, blank=True)
     tg_id = models.CharField(max_length=20, default=None, null=True, blank=True)
+    about_me = models.CharField(max_length=120,default=None, null=True, blank=True)
+    user_images = models.ImageField(upload_to='main/static/user_images', null=True, blank=True)
 
     def __str__(self):
         if self.last_name:

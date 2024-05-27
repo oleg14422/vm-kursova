@@ -1,49 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../static/css/article_style.css">
-    
+    <link rel="stylesheet" href="static/css/home_style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Головна</title>
+    <title>Document</title>
 </head>
 <body>
+    <div class="bg">
+    </div>
     <div class="wrapper">
-        <header class="header">
-            <div class="header__container">
-                <div class='nav'>
-                    <a href="{% url 'login' %}">Вхід</a>
-                    <a href="{% url 'new' %}">Реєстрація</a>
-                    <a href="{% url 'create_post' %}">Створити статтю</a>
-                </div>
+        <header>
+            <div class="nav">
+                <a href="{% url 'login' %}">Вхід</a>
+                <a href="{% url 'new' %}">Реєстрація</a>
+                <a href="{% url 'create_post' %}">Створити статтю</a>
+            </div>
+            <form class="search-form" id='search-form' action='/search' method="get">
+                {% csrf_token %}
+                <input type="text" id="search-input" placeholder="Введіть ваш пошуковий запит">
+                <button type="submit">Пошук</button>
+            </form>
+
+            <script>
+            document.getElementById("search-form").addEventListener("submit", function(event) {
+                event.preventDefault();  // Зупинити відправлення форми
+
+                var searchInput = document.getElementById("search-input").value;  // Отримати значення поля введення
+
+                // Перенаправити на URL з введеним текстом як параметр запиту
+                window.location.href = "/search?q=" + encodeURIComponent(searchInput);
+            });
+            </script>
+
+            <div class="account">
+                <a href="{% url 'myaccount' %}">
+                    <div class="logo-img-container">
+                        <img src="{{ logo_link }}" alt="">
+                    </div>
+                </a>
             </div>
         </header>
-        <main class="home">
-            <div class="home__container">
-                <div class="best-posts">
-                    <h2>Популярні статті</h2>
-                </div>
-                <div class="last-posts">
-                    <h2>Останні статті</h2>
-                    <div class="posts-list">
-                            {% for post in posts %}
-                                <div class="post-preview">
-                                    <a class='author-link' href="{% url 'author' %}?author={{ post.author.id }}">{{ post.author }}</a>
-                                    <br>
-                                    <br>
-                                    <a href="{% url 'post_view' %}?post={{ post.id }}">{{ post.title }}</a>
-                                </div>
-                            {% endfor %}
-
-                    </div>
+        <main>
+            <div class="main-title">Блог студентського життя</div>
+            <div class="articles">
+                <div class="column__title">Статті</div>
+                <div class="column">
+                    {% for post in posts %}
+                        <div class="column-item">
+                            <div class="column-item__author"><a href="{% url 'author' %}?author={{ post.author.id }}">{{  post.author}}</a></div>
+                            <div class="column-item__title"><a href="{% url 'post_view' %}?post={{ post.id }}">{{ post.title }}</a></div>
+                            <div class="column-item__short_description">{{ post.short_description}}</div>
+                            <div class="column-item__info">{{ post.created }}  {{ post.views }}</div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </main>
-        <div class="footer">
-            <div class="footer__container">
-                sdfsdd
+        <footer>
+            <div class="contact">
+                <div class="contact-title">Зв'язок з нами</div>
+                <div class="contact-email"><a href="mailto:email@gmail.com">email@gmail.com</a></div>
+                <div class="contact-email"><p>+38 096 123 4123</p></div>
             </div>
-        </div>
+            <div class="f_nav">
+                <div class="contact-title">Навігація</div>
+                <div class='f_nav_items'>
+                    <a href="{% url 'login' %}">Вхід</a>
+                    <a href="{% url 'new' %}">Реєстрація</a>
+                    <a href="{% url 'create_post' %}">Створити статтю</a>
+                    <a href="{% url 'myaccount' %}">Мій акаунт</a>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

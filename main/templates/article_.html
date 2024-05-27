@@ -8,49 +8,89 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="head">
+        <header>
             <div class="header__container">
-                <div class='nav'>
+                <div class="nav">
+                <div class="home-link">
+                        <a href="{% url 'home' %}">
+                            <div class="main-logo-img-container">
+                                <img src="static/img/logomak_logo.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+            </div>
+            <form class="search-form" id='search-form' action='/search' method="get">
+                {% csrf_token %}
+                <input type="text" id="search-input" placeholder="Введіть ваш пошуковий запит">
+                <button type="submit">Пошук</button>
+            </form>
+
+            <script>
+            document.getElementById("search-form").addEventListener("submit", function(event) {
+                event.preventDefault();  // Зупинити відправлення форми
+
+                var searchInput = document.getElementById("search-input").value;  // Отримати значення поля введення
+
+                // Перенаправити на URL з введеним текстом як параметр запиту
+                window.location.href = "/search?q=" + encodeURIComponent(searchInput);
+            });
+            </script>
+            <div class="account">
+                <a href="{% url 'myaccount' %}">
+                    <div class="logo-img-container">
+                        <img src="{{ logo_link }}" alt="">
+                    </div>
+                </a>
+            </div>
+            </div>
+        </header>
+    <main class="main">
+        <div class="body__container">
+            <div class="content">
+                    <p class="post-info"><span>{{ post.created }}</span> {{ post.views }} <a href="{% url 'author' %}?author={{ post.author.id }}">{{ post.author }}</a></p>
+                    <h1>{{ post.title }}</h1>
+            </div>
+            <div class="post-content">
+                {{ content|safe }}
+            </div>
+            <div class="asnwers">
+                <h2>Коментарі</h2>
+
+                {% if CommentForm %}
+                    <h3>Додати коментар</h3>
+                    <form class='form' method="post">
+                    {% csrf_token %}
+                    {{ CommentForm.as_p }}
+                    <button type="submit">Додати коментар</button></form>
+                {% else %}
+                    <p><a href="{% url 'login' %}">Увійдіть</a> Щоб додати коментар</p>
+                {% endif %}
+                <ul>
+                    {% for comment in comments %}
+                        <li>{{ comment.created }} <a href="{%  url 'author' %}?author={{ comment.author.id }}">{{ comment.author }}</a><p>{{ comment.content }}</p></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer__container">
+            <div class="contact">
+                <div class="contact-title">Зв'язок з нами</div>
+                <div class="contact-email"><a href="mailto:email@gmail.com">email@gmail.com</a></div>
+                <div class="contact-email"><p>+38 096 123 4123</p></div>
+            </div>
+            <div class="f_nav">
+                <div class="contact-title">Навігація</div>
+                <div class='f_nav_items'>
                     <a href="{% url 'login' %}">Вхід</a>
                     <a href="{% url 'new' %}">Реєстрація</a>
                     <a href="{% url 'create_post' %}">Створити статтю</a>
-                    <a href="{% url 'home' %}">Головна</a>
+                    <a href="{% url 'myaccount' %}">Мій акаунт</a>
                 </div>
             </div>
         </div>
-    <div class="body">
-        <div class="body__container">
-            <div class="content">
-                <div class="title">
-                    <p class="post-info"><span>{{ post.created }}</span> {{ post.views }} <a href="{% url 'author' %}?author={{ post.author.id }}">{{ post.author }}</a></p>
-                    <h1>{{ post.title }}</h1>
-                </div>
-                <p class="post-content">{{ post.content }}</p>
-                <div class="asnwers">
-                    <h2>Коментарі</h2>
-
-                    {% if CommentForm %}
-                        <h3>Додати коментар</h3>
-                        <form class='form' method="post">
-                        {% csrf_token %}
-                        {{ CommentForm.as_p }}
-                        <button type="submit">Додати коментар</button></form>
-                    {% else %}
-                        <p><a href="{% url 'login' %}">Увійдіть</a> Щоб додати коментар</p>
-                    {% endif %}
-                    <ul>
-                        {% for comment in comments %}
-                            <li>{{ comment.created }} <a href="{%  url 'author' %}?author={{ comment.author.id }}">{{ comment.author }}</a><p>{{ comment.content }}</p></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            <div class="sidebar">
-                <h2>інші статті</h2>
-                <p>тут будуть інші статті</p>
-            </div>
-        </div>
-    </div>
+    </footer>
 </div>
 </body>
 </html>

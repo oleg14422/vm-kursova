@@ -1,26 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
-        body{
-            background: #222;
-            color: #bbb;
-        }
-    </style>
+    <link rel="stylesheet" href="static/css/article_style.css">
     <meta charset="UTF-8">
-    <title>Реєстрація</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-    <h1>Реєстрація</h1>
-    <form class='form' method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Зареєструватись</button></form>
-    <a href="https://t.me/blog_register_helper_bot">Реєстрація за допомогою телеграм бота</a>
-    <div class='nav'>
+    <div class="wrapper">
+        <header>
+            <div class="header__container">
+                <div class="nav">
+                    <div class="home-link">
+                        <a href="{% url 'home' %}">
+                            <div class="main-logo-img-container">
+                                <img src="static/img/logomak_logo.png" alt="">
+                            </div>
+                        </a>
+                    </div>
                     <a href="{% url 'login' %}">Вхід</a>
-                    <a href="{% url 'home' %}">Головна</a>
+                </div>
+                <form class="search-form" id='search-form' action='/search' method="get">
+                    {% csrf_token %}
+                    <input type="text" id="search-input" placeholder="Введіть ваш пошуковий запит">
+                    <button type="submit">Пошук</button>
+                </form>
+
+                <script>
+                document.getElementById("search-form").addEventListener("submit", function(event) {
+                    event.preventDefault();  // Зупинити відправлення форми
+
+                    var searchInput = document.getElementById("search-input").value;  // Отримати значення поля введення
+
+                    // Перенаправити на URL з введеним текстом як параметр запиту
+                    window.location.href = "/search?q=" + encodeURIComponent(searchInput);
+                });
+                </script>
+                <div class="account">
+                    <a href="{% url 'myaccount' %}">
+                        <div class="logo-img-container">
+                            <img src="{{ logo_link }}" alt="">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="main__container">
+                <div class="content">
+                    <div class="title">Реєстрація</div>
+                    <form class='form' method="post">
+                        {% csrf_token %}
+                        <div class="form-input">
+                            <label for="">{{ form.username.label }}</label>
+                            {{ form.username }}
+                        </div>
+
+                        <div class="form-input">
+                            <label for="">{{ form.email.label }}</label>
+                            {{ form.email }}
+                        </div>
+
+                        <div class="form-input">
+                            <label for="">{{ form.first_name.label }}</label>
+                            {{ form.first_name }}
+                        </div>
+
+                        <div class="form-input">
+                            <label for="">{{ form.last_name.label }}</label>
+                            {{ form.last_name }}
+                        </div>
+
+                        <div class="form-input">
+                            <label for="">{{ form.password.label }}</label>
+                            {{ form.password }}
+                        </div>
+                        <div class="reg-button">
+                            <button type="submit">Зареєструватись</button>
+                        </div>
+                    </form>
+                    <a href="https://t.me/blog_register_helper_bot">Реєстрація за допомогою телеграм бота</a>
                 </div>
 
+            </div>
+
+        </main>
+        <footer>
+            <div class="footer__container">
+                <div class="contact">
+                    <div class="contact-title">Зв'язок з нами</div>
+                    <div class="contact-email"><a href="mailto:email@gmail.com">email@gmail.com</a></div>
+                    <div class="contact-email"><p>+38 096 123 4123</p></div>
+                </div>
+                <div class="f_nav">
+                    <div class="contact-title">Навігація</div>
+                    <div class='f_nav_items'>
+                        <a href="{% url 'login' %}">Вхід</a>
+                        <a href="{% url 'new' %}">Реєстрація</a>
+                        <a href="{% url 'create_post' %}">Створити статтю</a>
+                        <a href="{% url 'myaccount' %}">Мій акаунт</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

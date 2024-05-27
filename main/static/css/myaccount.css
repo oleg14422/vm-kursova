@@ -1,0 +1,257 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background: #aaa;
+    padding: 0px 0px 30px 0px;
+
+}
+[class*="__container"] {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 15px;
+}
+.header__container {
+    background: #000;
+    display: flex;
+    height: 80px;
+    color:#fff;
+    justify-content: space-between;
+}
+.main__container {
+    display: flex;
+    min-height: 500px;
+    flex-direction: column;
+}
+
+.nav {
+    flex: 0 1 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav a{
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 28px;
+}
+.main-logo-img-container {
+    width: 120px;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+}
+
+.main-logo-img-container img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.logo-img-container {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.logo-img-container img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.content {
+    flex: 0 1 75%;
+    display: flex;
+    flex-direction: column;
+    padding-left:40px;
+}
+main {
+    flex: 1 1 auto;
+
+
+}
+
+.main-title {
+    font-family: 'Inter';
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.change-photo-section {
+
+    border: 2px solid #000;
+    border-radius: 10px;
+    display: flex;
+    background: #ccc;
+    margin-bottom: 30px;
+    width: 75%;
+}
+
+.photo-in-change-photo-section{
+    flex: 0 1 30%;
+
+}
+.content form{
+    width: 75%;
+}
+.form-img-container {
+    width: 300px;
+    height: 260px;
+    overflow: hidden;
+
+    position: relative;
+}
+
+.form-img-container img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.rest-of-change-photo {
+    flex:0 1 70%;
+    position: relative;
+
+}
+
+.rest-of-change-photo button {
+    position: absolute;
+    right: 20px;
+    bottom:10px;
+    background: #f2a355;
+    border:none;
+    border-radius: 3px;
+}
+
+
+.change-photo-helptext {
+    position: absolute;
+    left: 30px;
+    bottom: 15px;
+    font-size: 14px;
+    color:#000;
+}
+
+.section-title {
+    color:#000;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.change-data-section {
+    border: 2px solid #000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background: #ccc;
+    margin-bottom: 30px;
+}
+
+.field-change {
+    display:flex;
+    height: 70px;
+    border-bottom: 1px solid #444;
+}
+
+.save-button {
+    height: 50px;
+    background: #ccc;
+    position: relative;
+}
+
+.save-button button {
+    border: none;
+    width: 80px;
+    height: 25px;
+    border-radius: 3px;
+    background: #f2a355;
+    position: absolute;
+    right:40px;
+    bottom: 10px;
+}
+.field-change-label {
+    padding-left:20px;
+    flex: 0 1 30%;
+}
+
+.field-change-label{
+    color:#000;
+    font-size: 26px;
+    font-family: 'Arial';
+}
+.field-change-form {
+    flex: 0 1 70%;
+}
+.field-change-form input {
+    border-radius: 4px;
+    border: none;
+    width:80%;
+}
+
+.field-change-form-bio {
+    flex: 0 1 70%;
+}
+
+.field-change-form-bio textarea {
+    border-radius: 4px;
+    border: none;
+    max-height: 40px;
+    width:80%;
+    resize:none;
+}
+
+.change-password-section {
+
+    border: 2px solid #000;
+    border-radius: 10px;
+    background: #ccc;
+}
+
+.password-label {
+    font-size: 20px;
+}
+
+.password-helptext {
+    font-size: 14px;
+    color:#000;
+}
+
+
+.footer__container {
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    min-height: 200px;
+    background: #333;
+}
+
+.footer__container a{
+    color:#fff;
+}
+.footer__container a:hover{
+    color: red;
+}
+.contact-title {
+    font-size: 28px;
+    color: #fff;
+
+}
+
+.f_nav_items {
+    display:flex;
+    flex-direction: column;
+}

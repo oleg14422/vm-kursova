@@ -1,19 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="static/css/myaccount.css">
     <meta charset="UTF-8">
-    <title>account</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій акаунт</title>
 </head>
 <body>
-    <div class='nav'>
-        <a href="{% url 'home' %}">Головна</a>
-        <a href="{% url 'new' %}">Реєстрація</a>
-    </div>
-    <h1>Мій акаунт</h1>
-    <p>username: {{user.username}}</p>
-    <p>first name: {{ author.first_name }}</p>
-    <p>last name: {{ author.last_name }}</p>
-    <p>email: {{ user.email }}</p>
+    <div class="wrapper">
+        <header>
+            <div class="header__container">
+                <div class="nav">
+                    <div class="home-link">
+                        <a href="{% url 'home' %}">
+                            <div class="main-logo-img-container">
+                                <img src="static/img/logomak_logo.png" alt="">
+                            </div>
+                        </a>
+                    </div>
+                    <a href="{% url 'login' %}">Вхід</a>
+                </div>
+                <form class="search-form" id='search-form' action='/search' method="get">
+                    {% csrf_token %}
+                    <input type="text" id="search-input" placeholder="Введіть ваш пошуковий запит">
+                    <button type="submit">Пошук</button>
+                </form>
 
+                <script>
+                document.getElementById("search-form").addEventListener("submit", function(event) {
+                    event.preventDefault();  // Зупинити відправлення форми
+
+                    var searchInput = document.getElementById("search-input").value;  // Отримати значення поля введення
+
+                    // Перенаправити на URL з введеним текстом як параметр запиту
+                    window.location.href = "/search?q=" + encodeURIComponent(searchInput);
+                });
+                </script>
+                <div class="account">
+                    <a href="{% url 'myaccount' %}">
+                        <div class="logo-img-container">
+                            <img src="{{ logo_link }}" alt="">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="main__container">
+                <div class="content">
+                    <div class='main-title'>Мій акаунт</div>
+                    <div class="section-title">Змінити фото профілю</div>
+                    <div class="change-photo-section">
+                        <div class="photo-in-change-photo-section">
+                            <div class="form-img-container">
+                                <img src="{{ logo_link }}" alt="">
+                            </div>
+                        </div>
+                        <div class="rest-of-change-photo">
+                            <form method="post" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{ ImageForm }}
+                                <input type="hidden" name="request_type" value="photo_change">
+                                <button type="submit">Завантажити</button>
+                            </form>
+                            <div class="change-photo-helptext">
+                                <p>Максимальний розмір фото 10mb</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section-title">Змінити дані</div>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="change-data-section">
+                            <div class="field-change">
+                                <div class="field-change-label">
+                                    <p>{{ form.username.label }}</p>
+                                </div>
+                                <div class="field-change-form">
+                                    <p>{{ form.username }}</p>
+                                </div>
+                            </div>
+                            <div class="field-change">
+                                <div class="field-change-label">
+                                    <p>{{ form.first_name.label }}</p>
+                                </div>
+                                <div class="field-change-form">
+                                    <p>{{ form.first_name }}</p>
+                                </div>
+                            </div>
+                            <div class="field-change">
+                                <div class="field-change-label">
+                                    <p>lastname</p>
+                                </div>
+                                <div class="field-change-form">
+                                    <p>{{ form.last_name }}</p>
+                                </div>
+                            </div>
+                            <div class="field-change">
+                                <div class="field-change-label">
+                                    <p>email</p>
+                                </div>
+                                <div class="field-change-form">
+                                    <p>{{ form.email }}</p>
+                                </div>
+                            </div>
+                            <div class="field-change">
+                                <div class="field-change-label">
+                                    <p>about me</p>
+                                </div>
+                                <div class="field-change-form-bio">
+                                    <p>{{ form.bio }}</p>
+                                </div>
+                            </div>
+                            <input type="hidden" name='request_type' value="change_data">
+                            <div class="save-button">
+                                <button type="submit">Зберегти</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="section-title">Змінити пароль</div>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="change-password-section">
+
+                            <div class="field-change">
+                                <div class="field-change-label">
+                                    <p class="password-label">Введіть новий пароль</p>
+                                </div>
+                                <div class="field-change-form">
+                                    <p>{{ ChangePasswordForm.password }}</p>
+                                    <div class="password-helptext">
+                                        Після зміни пароля потрібно буде перезайти в акаунт
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="save-button">
+                                <button type="submit">Зберегти</button>
+                            </div>
+                            <input type="hidden" name="request_type" value="change_password">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="footer__container">
+                <div class="contact">
+                    <div class="contact-title">Зв'язок з нами</div>
+                    <div class="contact-email"><a href="mailto:email@gmail.com">email@gmail.com</a></div>
+                    <div class="contact-email"><p>+38 096 123 4123</p></div>
+                </div>
+                <div class="f_nav">
+                    <div class="contact-title">Навігація</div>
+                    <div class='f_nav_items'>
+                        <a href="{% url 'login' %}">Вхід</a>
+                        <a href="{% url 'new' %}">Реєстрація</a>
+                        <a href="{% url 'create_post' %}">Створити статтю</a>
+                        <a href="{% url 'myaccount' %}">Мій акаунт</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

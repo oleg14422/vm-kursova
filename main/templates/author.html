@@ -8,11 +8,34 @@
 </head>
 <body>
     <div class="wrapper">
-        <header>
-            <div class="header__container">
+         <header>
+            <div class="nav">
                 <a href="{% url 'home' %}">Головна</a>
             </div>
-        </header>
+            <form class="search-form" id='search-form' action='/search' method="get">
+                {% csrf_token %}
+                <input type="text" id="search-input" placeholder="Введіть ваш пошуковий запит">
+                <button type="submit">Пошук</button>
+            </form>
+
+            <script>
+            document.getElementById("search-form").addEventListener("submit", function(event) {
+                event.preventDefault();  // Зупинити відправлення форми
+
+                var searchInput = document.getElementById("search-input").value;  // Отримати значення поля введення
+
+                // Перенаправити на URL з введеним текстом як параметр запиту
+                window.location.href = "/search?q=" + encodeURIComponent(searchInput);
+            });
+            </script>
+            <div class="account">
+                <a href="{% url 'myaccount' %}">
+                    <div class="logo-img-container">
+                        <img src="{{ logo_link }}" alt="">
+                    </div>
+                </a>
+            </div>
+         </header>
         <main>
             <div class="main__container">
                 <div class="author__info">

@@ -1,0 +1,154 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    max-width: 1800px;
+    padding: 0px 0px 30px 0px;
+
+}
+
+header {
+
+    width: 100%;
+    background: #000;
+    display: flex;
+    height: 63px;
+    color:#fff;
+    justify-content: space-between;
+}
+
+.nav {
+    padding: 10px;
+    flex: 0 1 30%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav a{
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 28px;
+}
+
+.logo-img-container {
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 60px;
+    position: relative;
+}
+
+.logo-img-container img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.wrapper {
+    flex-direction: column;
+    display: flex;
+}
+
+main {
+    align-self: center;
+    max-width: 1000px;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.main-title {
+    font-family: 'Inter';
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.main-content {
+    flex: 0 1 20%;
+    min-width: 650px;
+    margin-right: 80px;
+    padding-bottom: 40px;
+}
+.guide-title {
+    font-size: 24px;
+}
+
+.post-title {
+    display:flex;
+    height: 40px;
+}
+
+.post-title .post-lable {
+    flex:0 1 40%;
+}
+.post-title .post-form {
+    display: flex;
+    flex: 0 1 60%;
+}
+
+.post-title .post-form input{
+    align-self: center;
+    background: #ddd;
+    width: 100%;
+    border: 1px solid #222;
+    border-radius: 3px;
+    max-height: 20px;
+}
+
+.post-short_description {
+    display: flex;
+    height: 80px;
+}
+
+
+.post-short_description .post-lable {
+    display: flex;
+    flex:0 1 40%;
+}
+
+.post-short_description .post-form {
+    flex: 0 1 60%;
+}
+
+.post-short_description .post-form textarea {
+    width: 100%;
+    align-self: center;
+    height: 60px;
+    resize: none;
+    background: #ddd;
+    border: 1px solid #222;
+    border-radius: 3px;
+}
+
+.post-content {
+    display: flex;
+    margin-top:40px;
+    padding-bottom: 60px;
+}
+
+.post-content textarea {
+    background: #ddd;
+    resize: none;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #222;
+    border-radius: 3px;
+}
+
+.post-form form {
+    position: relative;
+}
+
+.post-form button {
+    position: absolute;
+    bottom:20px;
+    right: 15px;
+    background: #f2a355;
+    border:none;
+    border-radius: 3px;
+    color:#fff;
+    height: 30px;
+    width: 110px;
+}
