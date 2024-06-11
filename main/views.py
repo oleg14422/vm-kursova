@@ -321,7 +321,7 @@ def tg_new(request):
 def tg_login(request):
     SECRET_KEY = 'adsriugperjhbkjvlgnrsh JSKLGHJSV Lvh LSEJH Vslkhjasdhflknavsl12417 69oiyavnhvn9uioqrh '
     id_ = request.GET.get('id')
-    time_ = request.GET.get('time')
+    time_ = int(request.GET.get('time'))
     token = request.GET.get('token')
     if not id_ or not time_ or not token:
         print(id_, time_, token)
@@ -332,6 +332,7 @@ def tg_login(request):
         return HttpResponseBadRequest('User does not exist')
     if check_token != token:
         print('invalid token')
+        print(token, check_token)
         return HttpResponseBadRequest('invalid login')
     if time.time() - time_ > 300:
         return HttpResponseBadRequest('link expired')
