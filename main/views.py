@@ -300,7 +300,7 @@ def tg_new(request):
         last_name = request.POST.get('last_name')
         password = request.POST.get('password')
         id_ = request.POST.get('id')
-        user_ = Authors.objects.filter(tg_id=id)
+        user_ = Authors.objects.filter(tg_id=id_)
         if user_.exists():
             return HttpResponseBadRequest('You are already registered')
         user_ = User.objects.filter(username=username)
