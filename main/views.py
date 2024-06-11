@@ -300,12 +300,13 @@ def tg_new(request):
         last_name = request.POST.get('last_name')
         password = request.POST.get('password')
         id_ = request.POST.get('id')
-        user_ = User.objects.filter(username=username)
-        if user_.exists():
-            return HttpResponseBadRequest('username already exist')
         user_ = Authors.objects.filter(tg_id=id)
         if user_.exists():
             return HttpResponseBadRequest('You are already registered')
+        user_ = User.objects.filter(username=username)
+        if user_.exists():
+            return HttpResponseBadRequest('username already exist')
+
         try:
             user = User.objects.create_user(username=username, password=password)
             author = Authors(auth=user, first_name=first_name, last_name=last_name, tg_id = id_)
